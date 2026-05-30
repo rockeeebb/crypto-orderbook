@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const HISTORY_LIMIT = 1200;
+const HISTORY_LIMIT = 600;
 
 function defaultUrl() {
   if (typeof window === 'undefined') return 'ws://localhost:4000/ws';

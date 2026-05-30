@@ -9,7 +9,7 @@ const BinanceConnector = require('./binance');
 const { calculateMetrics } = require('./metrics');
 
 const PORT = process.env.PORT || 4000;
-const HISTORY_LIMIT = 1200; // 20 minutes at 1 Hz
+const HISTORY_LIMIT = 600; // 10 minutes at 1 Hz
 
 const app = express();
 app.use(cors());

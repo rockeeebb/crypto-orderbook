@@ -1,4 +1,4 @@
-const DEPTH = 100;
+const DEPTH = 60;
 
 function calculateMetrics(orderbook) {
   const { bids, asks } = orderbook.getTopLevels(DEPTH);
@@ -8,7 +8,7 @@ function calculateMetrics(orderbook) {
     return null;
   }
 
-  // Linear descending weights: row 0 (closest to mid) = 100, row 99 = 1.
+  // Linear descending weights: row 0 (closest to mid) = DEPTH, last row = 1.
   let weightedBuySum = 0;
   let weightedSellSum = 0;
   let totalWeight = 0;

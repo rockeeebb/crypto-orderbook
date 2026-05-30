@@ -42,7 +42,7 @@ export default function PriceChart({ history }) {
   return (
     <div className="rounded-2xl bg-slate-900/70 border border-slate-800 p-5">
       <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-        <h3 className="text-slate-200 font-semibold">Current vs Predicted · last 20 min</h3>
+        <h3 className="text-slate-200 font-semibold">Current vs Predicted · last 10 min</h3>
         <span className="text-xs text-slate-500">{data.length} pts</span>
       </div>
       <div className="h-72 md:h-96 w-full">

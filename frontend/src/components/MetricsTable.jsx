@@ -11,7 +11,7 @@ export default function MetricsTable({ history }) {
   return (
     <div className="rounded-2xl bg-slate-900/70 border border-slate-800 p-5">
       <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
-        <h3 className="text-slate-200 font-semibold">Raw metrics · last 20 min</h3>
+        <h3 className="text-slate-200 font-semibold">Raw metrics · last 10 min</h3>
         <span className="text-xs text-slate-500">{rows.length} rows</span>
       </div>
       <div className="overflow-auto -mx-2 px-2 max-h-[28rem] md:max-h-[32rem]">
