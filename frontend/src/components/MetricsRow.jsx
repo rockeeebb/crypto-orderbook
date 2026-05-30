@@ -19,7 +19,7 @@ export default function MetricsRow({ latest }) {
       <div className="rounded-2xl bg-slate-900/70 border border-slate-800 p-5">
         <div className="flex items-center gap-2 text-slate-400 text-sm mb-2">
           <Scale className="w-4 h-4" />
-          Weight Change % (Imbalance OBI · top 60)
+          Weight Change % (Imbalance OBI · top 10)
         </div>
         <div className={`font-mono text-2xl md:text-3xl ${imbColor}`}>
           {imbalance >= 0 ? '+' : ''}
@@ -43,7 +43,7 @@ export default function MetricsRow({ latest }) {
           {fmt(valueChange, 4)}
         </div>
         <div className="mt-3 text-xs text-slate-500">
-          (ask₆₀ − bid₆₀) × OBI
+          (ask₁₀ − bid₁₀) × OBI
         </div>
       </div>
     </div>

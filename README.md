@@ -1,13 +1,13 @@
 # BTC/USDT Orderbook Pulse
 
 A real-time cryptocurrency order book dashboard. Connects to the public Binance
-WebSocket, maintains a 60-level order book in memory, and computes 5
-weighted-imbalance metrics every second.
+WebSocket, computes 5 weighted-imbalance metrics every second over the top
+10 bid + top 10 ask levels.
 
 - Current price vs predicted price (color-coded by buy/sell pressure)
 - Weighted Order Book Imbalance (OBI) %
 - Value change and predicted move
-- 10 minute rolling history (chart + table)
+- Chart: last 10 minutes · Table: last 20 minutes
 
 Free to run, no API key needed.
 
@@ -111,13 +111,13 @@ To stop either server: press `Ctrl + C` in its terminal window.
 
 ## How the metrics are computed
 
-Every second, against the top 60 bid + top 60 ask levels:
+Every second, against the top 10 bid + top 10 ask levels:
 
 | Metric | Formula |
 |---|---|
 | Current Price | mid-price = `(best bid + best ask) / 2` |
-| Weight Change % (OBI) | Linear weights `60, 59, …, 1` per row; `valueᵢ = priceᵢ × qtyᵢ`; `imbalance = ((wBuyAvg − wSellAvg) / (wBuyAvg + wSellAvg)) × 100` |
-| Value Change | `(ask₆₀ − bid₆₀) × (OBI / 100)` |
+| Weight Change % (OBI) | Linear weights `10, 9, …, 1` per row; `valueᵢ = priceᵢ × qtyᵢ`; `imbalance = ((wBuyAvg − wSellAvg) / (wBuyAvg + wSellAvg)) × 100` |
+| Value Change | `(ask₁₀ − bid₁₀) × (OBI / 100)` |
 | Predicted Price | `Current + Value Change` |
 
 Order book is synced using Binance's recommended REST-snapshot + diff-stream

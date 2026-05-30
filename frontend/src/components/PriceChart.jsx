@@ -13,10 +13,12 @@ import {
 const formatTime = (ts) =>
   new Date(ts).toLocaleTimeString('en-US', { hour12: false });
 
+const CHART_WINDOW = 600; // last 10 minutes at 1 Hz
+
 export default function PriceChart({ history }) {
   const data = useMemo(
     () =>
-      history.map((m) => ({
+      history.slice(-CHART_WINDOW).map((m) => ({
         t: m.timestamp,
         time: formatTime(m.timestamp),
         current: Number(m.currentPrice.toFixed(2)),

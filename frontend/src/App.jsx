@@ -16,7 +16,7 @@ export default function App() {
             Orderbook <span className="text-amber-400">Pulse</span>
           </h1>
           <span className="text-xs text-slate-500">
-            60-level weighted OBI · 1s tick · 10 min history
+            10-level weighted OBI · 1s tick · 20 min history
           </span>
         </header>
 
