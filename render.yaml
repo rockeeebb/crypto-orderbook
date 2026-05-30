@@ -3,7 +3,7 @@ services:
     name: crypto-orderbook
     runtime: node
     plan: free
-    region: frankfurt
+    region: singapore
     buildCommand: npm run build
     startCommand: npm start
     autoDeploy: true
