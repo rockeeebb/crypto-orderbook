@@ -1,4 +1,4 @@
-const DEPTH = 10;
+const DEPTH = 3;
 
 function calculateMetrics(orderbook) {
   const { bids, asks } = orderbook.getTopLevels(DEPTH);
